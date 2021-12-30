@@ -3,3 +3,4 @@ __pycache__/
 dumped*
 .DS_Store
 database.sqlite
+*.rest

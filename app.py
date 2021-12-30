@@ -3,7 +3,7 @@ import pickle
 from numpy import array
 import os
 
-file = open('dumped-pipeline.pkl', 'rb')
+file = open('./dumped-pipeline.pkl', 'rb')
 clf = pickle.load(file)
 file.close()
 app = Flask(__name__)
