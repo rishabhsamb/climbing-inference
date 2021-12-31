@@ -1,6 +1,6 @@
 # climbing-inference
 
-A [website](https://rishabhsamb.github.io/climbing-inference) that predicts (conservatively) your best rock climbing grade from prior logbook data.
+A [website](https://rishabhsamb.github.io/climbing-inference) that predicts (conservatively) your best rock climbing grade given physical data from prior logbook data.
 
 The model was trained using various (non-deep) ML regression models (linear, k-nearest neighbours, decision tree, random forest, support vector), as seen in `training`.
 
