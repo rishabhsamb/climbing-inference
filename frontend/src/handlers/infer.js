@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export const inferHandler = async (obj) => {
     console.log(obj)
-    const url = "http://stark-woodland-02229.herokuapp.com/predict"
+    const url = "https://stark-woodland-02229.herokuapp.com/predict"
     const config = {
         headers: {
             'Content-Type': 'application/json'
