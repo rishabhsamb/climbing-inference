@@ -47,6 +47,7 @@ export default function ProTip() {
         "height": parseInt(height),
         "weight": parseInt(weight)
       }
+      setResult("Computing your highest grade prediction. Please allow up to ~8 seconds of processing time in the case of server cold start.")
       const ret = await inferHandler(obj)
       setResult(`V${ret.toString()}`)
     }
