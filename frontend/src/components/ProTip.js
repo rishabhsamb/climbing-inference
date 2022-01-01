@@ -14,8 +14,8 @@ export default function ProTip() {
   const [weight, setWeight] = React.useState("0")
   const [result, setResult] = React.useState("")
 
-  const isIntegerString = str => {
-    return /^\+?(0|[1-9]\d*)$/.test(str);
+  const isFloatString = str => {
+    return /^\d+\.\d+$|^\d+$/.test(str);
   }
 
   const isValidGender = val => {
@@ -36,25 +36,25 @@ export default function ProTip() {
   }
 
   const submitHandler = async () => {
-    const inputValid = (isIntegerString(difference) && isIntegerString(height) && isIntegerString(weight) && isValidGender(gender))
+    const inputValid = (isFloatString(difference) && isFloatString(height) && isFloatString(weight) && isValidGender(gender))
     if (!inputValid) {
-      setResult("Ensure that your inputs are all integers (except gender which should be one of M, F, or NB). Round up your 'how long have you been climbing' number.")
+      setResult("Ensure that your inputs are all numbers (except gender which should be one of M, F, or NB).")
     }
     else {
       const obj = {
-        "difference": parseInt(difference),
+        "difference": Number(difference),
         "gender": genderTranslate(gender),
-        "height": parseInt(height),
-        "weight": parseInt(weight)
+        "height": Number(height),
+        "weight": Number(weight)
       }
-      setResult("Computing your highest grade prediction. Please allow up to ~8 seconds of processing time in the case of server cold start.")
+      setResult("Computing your highest grade prediction. Please allow up to ~15 seconds of processing time in the case of server cold start.")
       const ret = await inferHandler(obj)
       setResult(`V${ret.toString()}`)
     }
 }
 
   const handleDifference = (event) => {
-    if (!isIntegerString(event.target.value)) {
+    if (!isFloatString(event.target.value)) {
     }
     setDifference(event.target.value)
   }
