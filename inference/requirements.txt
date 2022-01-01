@@ -1,0 +1,6 @@
+numpy
+sklearn
+gunicorn
+flask
+flask_cors
+# to run training, you will need more than this (pandas, sqlite3, sklearn)
